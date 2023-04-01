@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq0mh0m2knjkb"]
+
+[ext_resource type="Script" path="res://dungeon.gd" id="1_v0iji"]
+[ext_resource type="Texture2D" uid="uid://gdl0d70iab0q" path="res://img/monster.png" id="2_drbxa"]
+
+[node name="Dungeon" type="Node3D"]
+script = ExtResource("1_v0iji")
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Viewpoint" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="LightSource" type="OmniLight3D" parent="Viewpoint"]
+omni_range = 4.501
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+pixel_size = 0.001
+billboard = 2
+texture = ExtResource("2_drbxa")

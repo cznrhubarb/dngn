@@ -1,0 +1,9 @@
+w,w,w,w,w,w,w,w,w,w
+w,ps,w,,,d,,,,w
+w,,w,,,w,,w,,w
+w,,w,w,w,w,,w,,w
+w,,,,,,,w,,w
+w,,,,,w,,,,w
+w,,,,,w,w,,w,w
+w,,,,,,,,,w
+w,w,w,w,w,w,w,w,w,w
