@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxwd7msdcgu32"]
+
+[ext_resource type="Texture2D" uid="uid://dg45pijxsd3ko" path="res://img/dirt.jpg" id="1_nulou"]
+[ext_resource type="Texture2D" uid="uid://32pfl2bb1uat" path="res://img/floor.jpg" id="2_u3dpk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gp7rv"]
+albedo_texture = ExtResource("1_nulou")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ow5b6"]
+material = SubResource("StandardMaterial3D_gp7rv")
+flip_faces = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x61n8"]
+albedo_texture = ExtResource("2_u3dpk")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rpdmq"]
+material = SubResource("StandardMaterial3D_x61n8")
+
+[node name="Empty" type="Node3D"]
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
+mesh = SubResource("PlaneMesh_ow5b6")
+skeleton = NodePath("../..")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("PlaneMesh_rpdmq")
+skeleton = NodePath("../..")

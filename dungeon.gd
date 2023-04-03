@@ -20,6 +20,7 @@ func _ready():
 func build(data: Array):
 	collision_data = data
 	var wall_scene: PackedScene = load("res://wall.tscn")
+	var empty_scene: PackedScene = load("res://empty.tscn")
 	
 	for y in data.size():
 		var row = data[y]
@@ -29,7 +30,12 @@ func build(data: Array):
 				var wall: Node3D = wall_scene.instantiate()
 				wall.position = Vector3(x, 0, y)
 				$Walls.add_child(wall)
-			elif cell.begins_with('p'):
+			else:
+				var empty: Node3D = empty_scene.instantiate()
+				empty.position = Vector3(x, -0.5, y)
+				$Walls.add_child(empty)
+					
+			if cell.begins_with('p'):
 				viewpoint.position = Vector3(x, 0, y)
 				viewpoint.look_at(viewpoint.position + get_orientation_for_direction(cell[1]))
 
